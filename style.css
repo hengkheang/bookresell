@@ -1,0 +1,273 @@
+/* ============================================================
+   Tokens
+   ============================================================ */
+:root {
+  --paper: #e9e2d0;
+  --card: #f7f2e6;
+  --ink: #241f18;
+  --ink-soft: #5c5642;
+  --rule: #c9bc9c;
+  --rule-soft: #ddd3b8;
+  --accent: #7f2c20;       /* spine red */
+  --gold: #a3803a;
+  --available: #3f6b4a;
+  --reserved: #b1751f;
+  --sold: #857c67;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--rule-soft) 1px, transparent 1px);
+  background-size: 100% 2.1rem;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header {
+  padding: 3rem 1.5rem 1.75rem;
+  text-align: center;
+  border-bottom: 3px double var(--ink);
+  background: var(--paper);
+  position: relative;
+}
+
+.site-header .eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+
+.site-header h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(2.1rem, 6vw, 3.2rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.site-header p.sub {
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ============================================================
+   Grid
+   ============================================================ */
+.catalog {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   Card (index card)
+   ============================================================ */
+.card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 3px 0 rgba(36, 31, 24, 0.06);
+}
+
+.card-tab {
+  position: absolute;
+  top: -0.65rem;
+  left: 1.1rem;
+  background: var(--ink);
+  color: var(--card);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+}
+
+.card-media {
+  padding: 1.4rem 1.4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.card-media img,
+.card-media .no-image {
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  background: #ddd4bb;
+  box-shadow: 3px 3px 0 rgba(36, 31, 24, 0.1);
+}
+
+.card-media .no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  padding: 0.5rem;
+}
+
+.card-body {
+  padding: 1.1rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.card-author {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin: -0.4rem 0 0;
+}
+
+.card-notes {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-divider {
+  border: none;
+  border-top: 1px dashed var(--rule);
+  margin: 0.1rem 0;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+}
+
+.price-row .original {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  font-size: 0.85rem;
+}
+
+.price-row .resell {
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.condition {
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+}
+
+.condition strong {
+  color: var(--ink);
+}
+
+/* ============================================================
+   Status stamp — the signature element
+   ============================================================ */
+.stamp {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.6rem;
+  border: 2px solid currentColor;
+  border-radius: 2px;
+  transform: rotate(-3deg);
+  position: relative;
+}
+
+.stamp::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px dotted currentColor;
+  opacity: 0.6;
+}
+
+.stamp.available { color: var(--available); }
+.stamp.reserved  { color: var(--reserved); }
+.stamp.sold      { color: var(--sold); }
+
+.card.is-sold .card-media img,
+.card.is-sold .card-media .no-image {
+  filter: grayscale(65%);
+  opacity: 0.75;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule-soft);
+}
+
+/* ============================================================
+   Responsive tweaks
+   ============================================================ */
+@media (max-width: 480px) {
+  .site-header { padding: 2.25rem 1rem 1.5rem; }
+  .catalog { grid-template-columns: 1fr; gap: 1.1rem; padding: 0.5rem 1rem 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

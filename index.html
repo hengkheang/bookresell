@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Book Catalog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <header class="site-header">
+    <span class="eyebrow">Catalog No. 001</span>
+    <h1>Books for Resale</h1>
+    <p class="sub">A running list of what's for sale, reserved, and gone.</p>
+  </header>
+ 
+  <main class="catalog">
+ 
+    <!-- ============================================================
+         ONE BOOK = ONE <article class="card"> BLOCK BELOW.
+ 
+         To add a book: copy an entire <article>...</article> block
+         and paste it anywhere in this <main>, then edit the text.
+ 
+         To remove a book: delete its whole <article>...</article> block.
+ 
+         STATUS: the <span class="stamp ..."> class controls the badge
+         color/text. Use exactly one of:
+           stamp available   -> green "Available"
+           stamp reserved    -> amber "Reserved"
+           stamp sold        -> gray  "Sold"
+         Also add class "is-sold" to the <article> tag itself when a
+         book is sold, so the cover photo fades slightly.
+ 
+         IMAGE: replace the src="..." with a link to your photo, or
+         with a path like "photos/mybook.jpg" if you upload the image
+         into a "photos" folder next to this file. If you don't have
+         a photo yet, delete the <img> tag and uncomment the
+         <div class="no-image">No cover image</div> line instead.
+         ============================================================ -->
+ 
+    <article class="card">
+      <span class="card-tab">Good</span>
+      <div class="card-media">
+        <img src="https://covers.openlibrary.org/b/isbn/9780099448822-L.jpg" alt="Cover of Norwegian Wood">
+        <!-- <div class="no-image">No cover<br>image</div> -->
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Norwegian Wood</h3>
+        <p class="card-author">by Haruki Murakami</p>
+        <p class="card-notes">Light shelf wear on the cover, spine intact, no markings inside.</p>
+        <hr class="card-divider">
+        <div class="price-row">
+          <span class="original">$16.99</span>
+          <span class="resell">$8.00</span>
+        </div>
+        <div class="meta-row">
+          <span class="condition">Condition: <strong>Good</strong></span>
+        </div>
+        <span class="stamp available">Available</span>
+      </div>
+    </article>
+ 
+    <article class="card">
+      <span class="card-tab">Like New</span>
+      <div class="card-media">
+        <img src="https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg" alt="Cover of The Design of Everyday Things">
+        <!-- <div class="no-image">No cover<br>image</div> -->
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">The Design of Everyday Things</h3>
+        <p class="card-author">by Don Norman</p>
+        <p class="card-notes">Barely read, no highlights. Reserved for a buyer — pending pickup.</p>
+        <hr class="card-divider">
+        <div class="price-row">
+          <span class="original">$22.00</span>
+          <span class="resell">$12.00</span>
+        </div>
+        <div class="meta-row">
+          <span class="condition">Condition: <strong>Like New</strong></span>
+        </div>
+        <span class="stamp reserved">Reserved</span>
+      </div>
+    </article>
+ 
+    <article class="card is-sold">
+      <span class="card-tab">Fair</span>
+      <div class="card-media">
+        <img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Cover of Sapiens">
+        <!-- <div class="no-image">No cover<br>image</div> -->
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Sapiens</h3>
+        <p class="card-author">by Yuval Noah Harari</p>
+        <p class="card-notes">Some highlighter marks in chapters 3–5. Already sold.</p>
+        <hr class="card-divider">
+        <div class="price-row">
+          <span class="original">$24.99</span>
+          <span class="resell">$10.00</span>
+        </div>
+        <div class="meta-row">
+          <span class="condition">Condition: <strong>Fair</strong></span>
+        </div>
+        <span class="stamp sold">Sold</span>
+      </div>
+    </article>
+ 
+    <article class="card">
+      <span class="card-tab">New</span>
+      <div class="card-media">
+        <!-- No photo yet for this one, so we use the placeholder instead of <img> -->
+        <div class="no-image">No cover<br>image</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Klara and the Sun</h3>
+        <p class="card-author">by Kazuo Ishiguro</p>
+        <p class="card-notes">Still sealed, never opened.</p>
+        <hr class="card-divider">
+        <div class="price-row">
+          <span class="original">$19.99</span>
+          <span class="resell">$9.50</span>
+        </div>
+        <div class="meta-row">
+          <span class="condition">Condition: <strong>New</strong></span>
+        </div>
+        <span class="stamp available">Available</span>
+      </div>
+    </article>
+ 
+  </main>
+ 
+  <footer class="site-footer">
+    Copy an &lt;article class="card"&gt; block in index.html to add a book.
+  </footer>
+ 
+</body>
+</html>
+ 
