@@ -91,17 +91,24 @@ body {
 .telegram-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   color: var(--accent-deep);
   background: #fff;
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.6rem;
   border-radius: 999px;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.telegram-link svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  fill: var(--accent);
 }
 
 .telegram-link:hover {
@@ -164,8 +171,9 @@ body {
 }
 
 .card-media {
-  position: relative;
+  padding: 1.1rem 1.1rem 0.7rem;
   line-height: 0;
+  background: var(--card);
 }
 
 .card-media img,
@@ -174,7 +182,9 @@ body {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
+  border-radius: 3px;
   background: var(--accent-soft);
+  box-shadow: 0 3px 8px rgba(16, 35, 63, 0.12);
 }
 
 .card-media .no-image {
@@ -187,44 +197,56 @@ body {
   color: var(--ink-soft);
   font-size: 0.85rem;
   padding: 0.5rem;
+  line-height: 1.4;
 }
 
-/* Condition chip, sitting on the bottom-left corner of the image */
-.condition-badge {
-  position: absolute;
-  left: 0.5rem;
-  bottom: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--accent-deep);
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 999px;
-  padding: 0.22rem 0.65rem;
+/* Condition — a prominent labeled tag, not a tiny chip */
+.condition-tag {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background: var(--accent-soft);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.4rem 0.7rem;
   margin: 0;
-  white-space: nowrap;
 }
 
-.condition-badge span {
-  font-weight: 400;
+.condition-tag .cond-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--ink-soft);
 }
 
-/* Status stamp, sitting on the top-right corner of the image */
+.condition-tag .cond-value {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.condition-tag .cond-value small {
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  margin-left: 0.25rem;
+}
+
+/* Status stamp, now sitting right beside the price */
 .stamp {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
   font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.24rem 0.5rem;
+  padding: 0.26rem 0.55rem;
   border: 1.5px solid currentColor;
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.88);
+  background: #fff;
   transform: rotate(-4deg);
+  white-space: nowrap;
 }
 
 .stamp.available { color: var(--available); }
@@ -238,10 +260,10 @@ body {
 }
 
 .card-body {
-  padding: 0.85rem 1rem 1rem;
+  padding: 0.3rem 1.1rem 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .card-notes {
@@ -259,9 +281,16 @@ body {
 
 .price-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
   font-family: var(--font-mono);
+}
+
+.price-row .prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
 }
 
 .price-row .original {

@@ -22,6 +22,9 @@
     </div>
     <!-- Update the link and text to your real Telegram username -->
     <a class="telegram-link" href="https://t.me/your_handle" target="_blank" rel="noopener">
+      <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M170.6 61.3 39.1 112.2c-8.9 3.6-8.9 8.6-1.6 10.8l33.6 10.5 78-49.2c3.7-2.3 7.1-1 4.3 1.5l-63.2 57.1h0l-2.3 34.8c3.4 0 4.9-1.6 6.8-3.4l16.3-15.8 33.9 25c6.2 3.5 10.7 1.7 12.3-5.7l22.3-105.2c2.3-9.1-3.5-13.2-11.9-9.3Z"/>
+      </svg>
       Telegram — @your_handle
     </a>
   </div>
@@ -41,10 +44,10 @@
 
          To remove a book: delete its whole <article>...</article> block.
 
-         CONDITION: the small white chip on the bottom-left of the photo.
-         Edit the text inside <p class="condition-badge">.
+         CONDITION: the boxed tag under the photo. Edit the percentage
+         and word inside <span class="cond-value">99% <small>(Like New)</small></span>.
 
-         STATUS: the chip on the top-right of the photo. Use exactly
+         STATUS: the small stamp sitting next to the price. Use exactly
          one of these classes on the <span class="stamp ...">:
            stamp available   -> "Available"
            stamp reserved    -> "Reserved"
@@ -65,15 +68,20 @@
       <div class="card-media">
         <img src="https://covers.openlibrary.org/b/isbn/9780099448822-L.jpg" alt="Norwegian Wood by Haruki Murakami">
         <!-- <div class="no-image">No cover<br>image</div> -->
-        <p class="condition-badge">99% <span>(Like New)</span></p>
-        <span class="stamp available">Available</span>
       </div>
       <div class="card-body">
+        <div class="condition-tag">
+          <span class="cond-label">Condition</span>
+          <span class="cond-value">99% <small>(Like New)</small></span>
+        </div>
         <p class="card-notes">Light shelf wear on the cover, spine intact, no markings inside.</p>
         <hr class="card-divider">
         <div class="price-row">
-          <span class="original">$16.99</span>
-          <span class="resell">$8.00</span>
+          <span class="prices">
+            <span class="original">$16.99</span>
+            <span class="resell">$8.00</span>
+          </span>
+          <span class="stamp available">Available</span>
         </div>
       </div>
     </article>
@@ -82,15 +90,20 @@
       <div class="card-media">
         <img src="https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg" alt="The Design of Everyday Things by Don Norman">
         <!-- <div class="no-image">No cover<br>image</div> -->
-        <p class="condition-badge">98% <span>(Like New)</span></p>
-        <span class="stamp reserved">Reserved</span>
       </div>
       <div class="card-body">
+        <div class="condition-tag">
+          <span class="cond-label">Condition</span>
+          <span class="cond-value">98% <small>(Like New)</small></span>
+        </div>
         <p class="card-notes">Barely read, no highlights. Reserved for a buyer — pending pickup.</p>
         <hr class="card-divider">
         <div class="price-row">
-          <span class="original">$22.00</span>
-          <span class="resell">$12.00</span>
+          <span class="prices">
+            <span class="original">$22.00</span>
+            <span class="resell">$12.00</span>
+          </span>
+          <span class="stamp reserved">Reserved</span>
         </div>
       </div>
     </article>
@@ -99,15 +112,20 @@
       <div class="card-media">
         <img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Sapiens by Yuval Noah Harari">
         <!-- <div class="no-image">No cover<br>image</div> -->
-        <p class="condition-badge">85% <span>(Fair)</span></p>
-        <span class="stamp sold">Sold</span>
       </div>
       <div class="card-body">
+        <div class="condition-tag">
+          <span class="cond-label">Condition</span>
+          <span class="cond-value">85% <small>(Fair)</small></span>
+        </div>
         <p class="card-notes">Some highlighter marks in chapters 3–5. Already sold.</p>
         <hr class="card-divider">
         <div class="price-row">
-          <span class="original">$24.99</span>
-          <span class="resell">$10.00</span>
+          <span class="prices">
+            <span class="original">$24.99</span>
+            <span class="resell">$10.00</span>
+          </span>
+          <span class="stamp sold">Sold</span>
         </div>
       </div>
     </article>
@@ -116,15 +134,20 @@
       <div class="card-media">
         <!-- No photo yet for this one, so we use the placeholder instead of <img> -->
         <div class="no-image">No cover<br>image</div>
-        <p class="condition-badge">100% <span>(New)</span></p>
-        <span class="stamp available">Available</span>
       </div>
       <div class="card-body">
+        <div class="condition-tag">
+          <span class="cond-label">Condition</span>
+          <span class="cond-value">100% <small>(New)</small></span>
+        </div>
         <p class="card-notes">Still sealed, never opened.</p>
         <hr class="card-divider">
         <div class="price-row">
-          <span class="original">$19.99</span>
-          <span class="resell">$9.50</span>
+          <span class="prices">
+            <span class="original">$19.99</span>
+            <span class="resell">$9.50</span>
+          </span>
+          <span class="stamp available">Available</span>
         </div>
       </div>
     </article>
