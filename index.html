@@ -49,8 +49,7 @@
 
          STATUS: the small stamp sitting next to the price. Use exactly
          one of these classes on the <span class="stamp ...">:
-           stamp available   -> "Available"
-           stamp reserved    -> "Reserved"
+           stamp available   -> "In Stock"
            stamp sold        -> "Sold"
          Also add class "is-sold" to the <article> tag itself when a
          book is sold, so the cover photo fades slightly.
@@ -69,29 +68,7 @@
 
     <article class="card">
       <div class="card-media">
-        <img src="https://covers.openlibrary.org/b/isbn/9780099448822-L.jpg" alt="Norwegian Wood by Haruki Murakami">
-        <!-- <div class="no-image">No cover<br>image</div> -->
-      </div>
-      <div class="card-body">
-        <div class="condition-tag">
-          <span class="cond-label">Condition</span>
-          <span class="cond-value">99% <small>(Like New)</small></span>
-        </div>
-        <p class="card-notes">Light shelf wear on the cover, spine intact, no markings inside.</p>
-        <hr class="card-divider">
-        <div class="price-row">
-          <span class="prices">
-            <span class="original">68,000 ៛</span>
-            <span class="resell">32,000 ៛</span>
-          </span>
-          <span class="stamp available">Available</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-media">
-        <img src="myson.jpg" alt="The Design of Everyday Things by Don Norman">
+        <img src="/workspaces/bookresell/myson.jpg" alt="Norwegian Wood by Haruki Murakami">
         <!-- <div class="no-image">No cover<br>image</div> -->
       </div>
       <div class="card-body">
@@ -99,14 +76,36 @@
           <span class="cond-label">Condition</span>
           <span class="cond-value">67% <small>(Like New)</small></span>
         </div>
-        <p class="card-notes">He loves oil</p>
+        <p class="card-notes">He loves oil and kimhak.</p>
         <hr class="card-divider">
         <div class="price-row">
           <span class="prices">
-            <span class="original">69000 ៛</span>
-            <span class="resell">67000 ៛</span>
+            <span class="original">69,000 ៛</span>
+            <span class="resell">67,000 ៛</span>
           </span>
-          <span class="stamp reserved">Available</span>
+          <span class="stamp available">In Stock</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-media">
+        <img src="https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg" alt="The Design of Everyday Things by Don Norman">
+        <!-- <div class="no-image">No cover<br>image</div> -->
+      </div>
+      <div class="card-body">
+        <div class="condition-tag">
+          <span class="cond-label">Condition</span>
+          <span class="cond-value">98% <small>(Like New)</small></span>
+        </div>
+        <p class="card-notes">Barely read, no highlights. Great condition overall.</p>
+        <hr class="card-divider">
+        <div class="price-row">
+          <span class="prices">
+            <span class="original">88,000 ៛</span>
+            <span class="resell">48,000 ៛</span>
+          </span>
+          <span class="stamp available">In Stock</span>
         </div>
       </div>
     </article>
@@ -150,7 +149,7 @@
             <span class="original">80,000 ៛</span>
             <span class="resell">38,000 ៛</span>
           </span>
-          <span class="stamp available">Available</span>
+          <span class="stamp available">In Stock</span>
         </div>
       </div>
     </article>
@@ -172,7 +171,7 @@
             <span class="original">60,000 ៛</span>
             <span class="resell">28,000 ៛</span>
           </span>
-          <span class="stamp available">Available</span>
+          <span class="stamp available">In Stock</span>
         </div>
       </div>
     </article>
@@ -194,7 +193,7 @@
             <span class="original">55,000 ៛</span>
             <span class="resell">25,000 ៛</span>
           </span>
-          <span class="stamp reserved">Reserved</span>
+          <span class="stamp available">In Stock</span>
         </div>
       </div>
     </article>
