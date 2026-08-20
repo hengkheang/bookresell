@@ -3,30 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Book Catalog</title>
+<title>Sonion — Books for Resale</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
+
   <header class="site-header">
-    <span class="eyebrow">Catalog No. 001</span>
-    <h1>Books for Resale</h1>
-    <p class="sub">A running list of what's for sale, reserved, and gone.</p>
+    <div class="brand">
+      <!-- LOGO: replace this whole div's contents with
+           <img src="logo.png" alt="Sonion logo">
+           once you have your logo file next to this page. -->
+      <div class="logo-slot">LOGO</div>
+
+      <div class="brand-text">
+        <span class="eyebrow">Est. Reseller</span>
+        <h1>Sonion</h1>
+        <p class="sub">Pre-loved books, fairly priced.</p>
+      </div>
+    </div>
   </header>
- 
+
   <main class="catalog">
- 
+
     <!-- ============================================================
          ONE BOOK = ONE <article class="card"> BLOCK BELOW.
- 
+
          To add a book: copy an entire <article>...</article> block
          and paste it anywhere in this <main>, then edit the text.
- 
+
          To remove a book: delete its whole <article>...</article> block.
- 
+
+         CONDITION: shown under the photo as a badge, e.g. "100% (New)".
+         Just edit the text inside <p class="condition-badge">.
+
          STATUS: the <span class="stamp ..."> class controls the badge
          color/text. Use exactly one of:
            stamp available   -> green "Available"
@@ -34,19 +46,19 @@
            stamp sold        -> gray  "Sold"
          Also add class "is-sold" to the <article> tag itself when a
          book is sold, so the cover photo fades slightly.
- 
+
          IMAGE: replace the src="..." with a link to your photo, or
          with a path like "photos/mybook.jpg" if you upload the image
          into a "photos" folder next to this file. If you don't have
          a photo yet, delete the <img> tag and uncomment the
          <div class="no-image">No cover image</div> line instead.
          ============================================================ -->
- 
+
     <article class="card">
-      <span class="card-tab">Good</span>
       <div class="card-media">
         <img src="https://covers.openlibrary.org/b/isbn/9780099448822-L.jpg" alt="Cover of Norwegian Wood">
         <!-- <div class="no-image">No cover<br>image</div> -->
+        <p class="condition-badge">99% <span>(Like New)</span></p>
       </div>
       <div class="card-body">
         <h3 class="card-title">Norwegian Wood</h3>
@@ -57,18 +69,15 @@
           <span class="original">$16.99</span>
           <span class="resell">$8.00</span>
         </div>
-        <div class="meta-row">
-          <span class="condition">Condition: <strong>Good</strong></span>
-        </div>
         <span class="stamp available">Available</span>
       </div>
     </article>
- 
+
     <article class="card">
-      <span class="card-tab">Like New</span>
       <div class="card-media">
         <img src="https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg" alt="Cover of The Design of Everyday Things">
         <!-- <div class="no-image">No cover<br>image</div> -->
+        <p class="condition-badge">98% <span>(Like New)</span></p>
       </div>
       <div class="card-body">
         <h3 class="card-title">The Design of Everyday Things</h3>
@@ -79,18 +88,15 @@
           <span class="original">$22.00</span>
           <span class="resell">$12.00</span>
         </div>
-        <div class="meta-row">
-          <span class="condition">Condition: <strong>Like New</strong></span>
-        </div>
         <span class="stamp reserved">Reserved</span>
       </div>
     </article>
- 
+
     <article class="card is-sold">
-      <span class="card-tab">Fair</span>
       <div class="card-media">
         <img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Cover of Sapiens">
         <!-- <div class="no-image">No cover<br>image</div> -->
+        <p class="condition-badge">85% <span>(Fair)</span></p>
       </div>
       <div class="card-body">
         <h3 class="card-title">Sapiens</h3>
@@ -101,18 +107,15 @@
           <span class="original">$24.99</span>
           <span class="resell">$10.00</span>
         </div>
-        <div class="meta-row">
-          <span class="condition">Condition: <strong>Fair</strong></span>
-        </div>
         <span class="stamp sold">Sold</span>
       </div>
     </article>
- 
+
     <article class="card">
-      <span class="card-tab">New</span>
       <div class="card-media">
         <!-- No photo yet for this one, so we use the placeholder instead of <img> -->
         <div class="no-image">No cover<br>image</div>
+        <p class="condition-badge">100% <span>(New)</span></p>
       </div>
       <div class="card-body">
         <h3 class="card-title">Klara and the Sun</h3>
@@ -123,19 +126,19 @@
           <span class="original">$19.99</span>
           <span class="resell">$9.50</span>
         </div>
-        <div class="meta-row">
-          <span class="condition">Condition: <strong>New</strong></span>
-        </div>
         <span class="stamp available">Available</span>
       </div>
     </article>
- 
+
   </main>
- 
+
   <footer class="site-footer">
-    Copy an &lt;article class="card"&gt; block in index.html to add a book.
+    <!-- Update the link and handle text to your real Telegram username -->
+    <p class="contact-label">Questions? Reach out on Telegram</p>
+    <a class="telegram-link" href="https://t.me/your_handle" target="_blank" rel="noopener">
+      Telegram — @your_handle
+    </a>
   </footer>
- 
+
 </body>
 </html>
- 
