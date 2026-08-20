@@ -155,6 +155,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1.5rem;
+  align-items: start;
 }
 
 /* ============================================================
@@ -171,16 +172,21 @@ body {
 }
 
 .card-media {
-  padding: 1.1rem 1.1rem 0.7rem;
-  line-height: 0;
+  padding: 1.6rem 1.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
   background: var(--card);
 }
 
 .card-media img,
 .card-media .no-image {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
   border-radius: 3px;
   background: var(--accent-soft);
@@ -188,6 +194,9 @@ body {
 }
 
 .card-media .no-image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -236,22 +245,23 @@ body {
 
 /* Status stamp, now sitting right beside the price */
 .stamp {
+  flex: 0 0 auto;
   font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.26rem 0.55rem;
-  border: 1.5px solid currentColor;
+  padding: 0.3rem 0.6rem;
+  border: 1.5px solid transparent;
   border-radius: 2px;
-  background: #fff;
+  color: #fff;
   transform: rotate(-4deg);
   white-space: nowrap;
 }
 
-.stamp.available { color: var(--available); }
-.stamp.reserved  { color: var(--reserved); }
-.stamp.sold      { color: var(--sold); }
+.stamp.available { background: var(--available); }
+.stamp.reserved  { background: var(--reserved); }
+.stamp.sold      { background: var(--sold); }
 
 .card.is-sold .card-media img,
 .card.is-sold .card-media .no-image {
@@ -283,26 +293,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  min-height: 2.5rem;
   font-family: var(--font-mono);
 }
 
 .price-row .prices {
   display: flex;
-  align-items: baseline;
-  gap: 0.55rem;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .price-row .original {
   color: var(--ink-soft);
   text-decoration: line-through;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
+  white-space: nowrap;
 }
 
 .price-row .resell {
   color: var(--accent);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 /* ============================================================
