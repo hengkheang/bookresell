@@ -11,19 +11,24 @@
 </head>
 <body>
 
-  <header class="site-header">
+  <!-- Top bar: logo, shop name, and Telegram contact — always visible up top -->
+  <div class="top-bar">
     <div class="brand">
       <!-- LOGO: replace this whole div's contents with
            <img src="logo.png" alt="Sonion logo">
            once you have your logo file next to this page. -->
       <div class="logo-slot">LOGO</div>
-
-      <div class="brand-text">
-        <span class="eyebrow">Est. Reseller</span>
-        <h1>Sonion</h1>
-        <p class="sub">Pre-loved books, fairly priced.</p>
-      </div>
+      <span class="shop-name">Sonion</span>
     </div>
+    <!-- Update the link and text to your real Telegram username -->
+    <a class="telegram-link" href="https://t.me/your_handle" target="_blank" rel="noopener">
+      Telegram — @your_handle
+    </a>
+  </div>
+
+  <header class="site-header">
+    <span class="eyebrow">Catalog No. 001</span>
+    <h2>Pre-loved books, fairly priced.</h2>
   </header>
 
   <main class="catalog">
@@ -36,78 +41,74 @@
 
          To remove a book: delete its whole <article>...</article> block.
 
-         CONDITION: shown under the photo as a badge, e.g. "100% (New)".
-         Just edit the text inside <p class="condition-badge">.
+         CONDITION: the small white chip on the bottom-left of the photo.
+         Edit the text inside <p class="condition-badge">.
 
-         STATUS: the <span class="stamp ..."> class controls the badge
-         color/text. Use exactly one of:
-           stamp available   -> green "Available"
-           stamp reserved    -> amber "Reserved"
-           stamp sold        -> gray  "Sold"
+         STATUS: the chip on the top-right of the photo. Use exactly
+         one of these classes on the <span class="stamp ...">:
+           stamp available   -> "Available"
+           stamp reserved    -> "Reserved"
+           stamp sold        -> "Sold"
          Also add class "is-sold" to the <article> tag itself when a
          book is sold, so the cover photo fades slightly.
 
          IMAGE: replace the src="..." with a link to your photo, or
-         with a path like "photos/mybook.jpg" if you upload the image
-         into a "photos" folder next to this file. If you don't have
-         a photo yet, delete the <img> tag and uncomment the
+         a path like "photos/mybook.jpg" if you upload the image into
+         a "photos" folder next to this file. If you don't have a
+         photo yet, delete the <img> tag and uncomment the
          <div class="no-image">No cover image</div> line instead.
+         The alt text is just for screen readers/SEO — it never shows
+         on the page, so title/author info still lives there.
          ============================================================ -->
 
     <article class="card">
       <div class="card-media">
-        <img src="https://covers.openlibrary.org/b/isbn/9780099448822-L.jpg" alt="Cover of Norwegian Wood">
+        <img src="https://covers.openlibrary.org/b/isbn/9780099448822-L.jpg" alt="Norwegian Wood by Haruki Murakami">
         <!-- <div class="no-image">No cover<br>image</div> -->
         <p class="condition-badge">99% <span>(Like New)</span></p>
+        <span class="stamp available">Available</span>
       </div>
       <div class="card-body">
-        <h3 class="card-title">Norwegian Wood</h3>
-        <p class="card-author">by Haruki Murakami</p>
         <p class="card-notes">Light shelf wear on the cover, spine intact, no markings inside.</p>
         <hr class="card-divider">
         <div class="price-row">
           <span class="original">$16.99</span>
           <span class="resell">$8.00</span>
         </div>
-        <span class="stamp available">Available</span>
       </div>
     </article>
 
     <article class="card">
       <div class="card-media">
-        <img src="https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg" alt="Cover of The Design of Everyday Things">
+        <img src="https://covers.openlibrary.org/b/isbn/9780465050659-L.jpg" alt="The Design of Everyday Things by Don Norman">
         <!-- <div class="no-image">No cover<br>image</div> -->
         <p class="condition-badge">98% <span>(Like New)</span></p>
+        <span class="stamp reserved">Reserved</span>
       </div>
       <div class="card-body">
-        <h3 class="card-title">The Design of Everyday Things</h3>
-        <p class="card-author">by Don Norman</p>
         <p class="card-notes">Barely read, no highlights. Reserved for a buyer — pending pickup.</p>
         <hr class="card-divider">
         <div class="price-row">
           <span class="original">$22.00</span>
           <span class="resell">$12.00</span>
         </div>
-        <span class="stamp reserved">Reserved</span>
       </div>
     </article>
 
     <article class="card is-sold">
       <div class="card-media">
-        <img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Cover of Sapiens">
+        <img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Sapiens by Yuval Noah Harari">
         <!-- <div class="no-image">No cover<br>image</div> -->
         <p class="condition-badge">85% <span>(Fair)</span></p>
+        <span class="stamp sold">Sold</span>
       </div>
       <div class="card-body">
-        <h3 class="card-title">Sapiens</h3>
-        <p class="card-author">by Yuval Noah Harari</p>
         <p class="card-notes">Some highlighter marks in chapters 3–5. Already sold.</p>
         <hr class="card-divider">
         <div class="price-row">
           <span class="original">$24.99</span>
           <span class="resell">$10.00</span>
         </div>
-        <span class="stamp sold">Sold</span>
       </div>
     </article>
 
@@ -116,28 +117,22 @@
         <!-- No photo yet for this one, so we use the placeholder instead of <img> -->
         <div class="no-image">No cover<br>image</div>
         <p class="condition-badge">100% <span>(New)</span></p>
+        <span class="stamp available">Available</span>
       </div>
       <div class="card-body">
-        <h3 class="card-title">Klara and the Sun</h3>
-        <p class="card-author">by Kazuo Ishiguro</p>
         <p class="card-notes">Still sealed, never opened.</p>
         <hr class="card-divider">
         <div class="price-row">
           <span class="original">$19.99</span>
           <span class="resell">$9.50</span>
         </div>
-        <span class="stamp available">Available</span>
       </div>
     </article>
 
   </main>
 
   <footer class="site-footer">
-    <!-- Update the link and handle text to your real Telegram username -->
-    <p class="contact-label">Questions? Reach out on Telegram</p>
-    <a class="telegram-link" href="https://t.me/your_handle" target="_blank" rel="noopener">
-      Telegram — @your_handle
-    </a>
+    Copy an &lt;article class="card"&gt; block in index.html to add a book.
   </footer>
 
 </body>
