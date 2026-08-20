@@ -14,7 +14,6 @@
   --accent-soft: #e6eefc;
 
   --available: #1f8a55;
-  --reserved: #c97f19;
   --sold: #8290a8;
 
   --font-brand: "Space Grotesk", "Segoe UI", sans-serif;
@@ -262,7 +261,6 @@ body {
 }
 
 .stamp.available { background: var(--available); }
-.stamp.reserved  { background: var(--reserved); }
 .stamp.sold      { background: var(--sold); }
 
 .card.is-sold .card-media img,
@@ -293,9 +291,9 @@ body {
   min-height: 0;
   overflow: hidden;
   display: -webkit-box;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
 .card-divider {
@@ -362,8 +360,4 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
-}
+}de
